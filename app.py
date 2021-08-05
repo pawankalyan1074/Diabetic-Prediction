@@ -10,7 +10,7 @@ model = pickle.load(open('model/model.pkl', 'rb'))
 def index():
    return render_template("index.html")
 
-@app.route('/ff',methods = ['POST', 'GET'])
+@app.route('/index',methods = ['POST', 'GET'])
 def ff():
    return render_template("form.html")
 
@@ -44,13 +44,10 @@ def predict():
    Age=request.form['Age']
    values.append(Age)  
    
-   final_values=[np.array(values)]
-   
+   final_values=[np.array(values)]   
    prediction=model.predict(final_values)
    
-   result=prediction
-   
-   if result==0:
+   if prediction==0:
       return render_template('result.html',name=name,Pregnancies=Pregnancies,Glucose=Glucose,BloodPressure=BloodPressure,SkinThickness=SkinThickness,Insulin=Insulin,BMI= BMI,DiabetesPedigreeFunction=DiabetesPedigreeFunction,Age=Age,rrr=0)
    else:
       return render_template('result.html',name=name,Pregnancies=Pregnancies,Glucose=Glucose,BloodPressure=BloodPressure,SkinThickness=SkinThickness,Insulin=Insulin,BMI= BMI,DiabetesPedigreeFunction=DiabetesPedigreeFunction,Age=Age,rrr=1)     

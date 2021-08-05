@@ -1,13 +1,16 @@
 {%extends 'base.html'%}
 {% block result %}
-<div>    
-    <div class="container col-md-3" style="opacity: 0.9;">
-        <h1>Hello {{name}}!</h1><br>
-        <div class="card" style="width:fit-content;">
+<div style="overflow-x: hidden;">    
+  <div>
+    <h1 style="color:black; text-align: center;">Diabetic Prediction</h1>
+  </div><br>
+    <div class="container col-md-3" style="opacity: 0.8; width: 70%;">
+        <h4>Hello {{name}}!</h4><br>
+        <div class="card" style="width: 90%;">
             <div class="card-header">
-                <h2>Your Result Card</h2>
+                <h4>Your Result Card</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body" >
               <table style="width:100%">
                 <tr>
                   <td>Pregnancies: </td>
@@ -44,18 +47,15 @@
               </table>
                 <p id="danger" style="font-size: 23px; color: red;"></p>
                 <p id="safe" style="font-size: 23px; color: Green;"></p>
-                <!---<h2 class="text-danger">Final Result : {{rrr}}</h2>--->
+                <!--<h4 class="text-danger">Final Result : {{rrr}}</h4>-->
               	{% if  rrr ==0 %}
                   	<script>
-                         document.getElementById("safe").innerHTML = "Your are not diabetic";
-                   		   //alert("You are not diabetic")
+                         document.getElementById("safe").innerHTML = "You are not diabetic";              
                     </script>
                 	{% endif %}
-
                 	{% if  rrr ==1 %}
                   	<script>
-                        document.getElementById("danger").innerHTML = "Your are diabetic"
-              		      //alert("You are diabetic")
+                        document.getElementById("danger").innerHTML = "You are diabetic";              		      
                     </script>
                 	{% endif %}
             </div>
