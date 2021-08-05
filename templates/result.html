@@ -1,0 +1,65 @@
+{%extends 'base.html'%}
+{% block result %}
+<div>    
+    <div class="container col-md-3" style="opacity: 0.9;">
+        <h1>Hello {{name}}!</h1><br>
+        <div class="card" style="width:fit-content;">
+            <div class="card-header">
+                <h2>Your Result Card</h2>
+            </div>
+            <div class="card-body">
+              <table style="width:100%">
+                <tr>
+                  <td>Pregnancies: </td>
+                  <td>{{Pregnancies}}</td>
+                </tr>
+                <tr>
+                  <td>Glucose : </td>
+                  <td>{{Glucose}}</td>
+                </tr>
+                <tr>
+                  <td>BloodPressure : </td>
+                  <td>{{BloodPressure}}</td>
+                </tr>
+                <tr>
+                  <td>SkinThickness : </td>
+                  <td>{{SkinThickness}}</td>
+                </tr>
+                <tr>
+                  <td>Insulin : </td>
+                  <td>{{Insulin}}</td>
+                </tr>
+                <tr>
+                  <td>BMI : </td>
+                  <td>{{BMI}}</td>
+                </tr>
+                <tr>
+                  <td>DiabetesPedigreeFunction : </td>
+                  <td>{{DiabetesPedigreeFunction}}</td>
+                </tr>
+                <tr>
+                  <td>Age : </td>
+                  <td>{{Age}}</td>
+                </tr>
+              </table>
+                <p id="danger" style="font-size: 23px; color: red;"></p>
+                <p id="safe" style="font-size: 23px; color: Green;"></p>
+                <!---<h2 class="text-danger">Final Result : {{rrr}}</h2>--->
+              	{% if  rrr ==0 %}
+                  	<script>
+                         document.getElementById("safe").innerHTML = "Your are not diabetic";
+                   		   //alert("You are not diabetic")
+                    </script>
+                	{% endif %}
+
+                	{% if  rrr ==1 %}
+                  	<script>
+                        document.getElementById("danger").innerHTML = "Your are diabetic"
+              		      //alert("You are diabetic")
+                    </script>
+                	{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+ {%endblock%}

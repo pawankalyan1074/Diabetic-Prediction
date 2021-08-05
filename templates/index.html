@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block form%}
+<div>    
+    <div class="container col-xs-5 col-md-4 mt-5" style="opacity: 0.8;">
+        <div>
+            <h1 style="text-align: center ; color: #0D41EA ;">Diabetic Prediction</h1>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3>Data Taking For Predection</h3>
+            </div>
+            <div class="card-body">
+                <form action="http://127.0.0.1:5000/form" method="POST">
+                    <div class="form-group">
+                        <label for="name"><b>Name</b></label>
+                        <input type="text" name="name" placeholder="Enter Your Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Pregnancies"><b>Pregnancies</b></label><br>
+                        <input type="number" name="Pregnancies" placeholder="Enter Number of Pregnancies" class="form-control" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Glucose"><b>Glucose</b></label> <br>
+                        <input type="number"  name="Glucose" placeholder="Enter Glucose Levels" class="form-control" min="0" max="200" required>
+                        
+                    </div>
+	                   <div class="form-group">
+                        <label for="BloodPressure"><b>BloodPressure</b></label> <br>
+                        <input type="number" name="BloodPressure" placeholder="Enter the Blood Pressure value" class="form-control" min="30" max="180"required>
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="SkinThickness"><b>SkinThickness</b></label><br>
+                        <input type="number" name="SkinThickness" placeholder="Enter the SkinThickness value" class="form-control" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Insulin"><b>Insulin</b></label><br>
+                        <input type="number" name="Insulin" placeholder="Enter Insulin value" class="form-control" min="10" max="1000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="BMI"><b>BMI</b></label><br>
+                        <input type="number" name="BMI" placeholder="Enter the BMI value" class="form-control" min="0" max="80" required>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="DiabetesPedigreeFunction"><b>DiabetesPedigreeFunction</b></label><br>
+                        <input type="number" name="DiabetesPedigreeFunction" placeholder="Enter the Diabetes Pedigree Value" class="form-control" min="0" max="2" required>
+                       
+                    </div>
+                    <div class="form-group">
+                        <label for="Age"><b>Age</b></label><br>
+                        <input type="number" name="Age" placeholder="Enter Age of person" class="form-control" min="1" required>
+                    </div>               
+
+                    
+                    <div class="container">
+                        <button class="btn btn-success btn-lg" type="submit">Submit</button>
+                        <button class="btn btn-warning btn-lg float-right" type="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+  </div>
+{% endblock%}
